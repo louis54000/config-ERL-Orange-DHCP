@@ -5,7 +5,7 @@ Testée et fonctionelle
 Avec la participation des membres de https://lafibre.info
 
 
-Il est recommandé du'utiliser un switch manageable comme le GS108Tv2 pour taguer la CoS entre l'ONT et l'ERL et pour l'IGMP Snooping (nécéssaire pour connecter la livebox STB sur l'ERL)
+Il est recommandé d'utiliser un switch manageable comme le GS108Tv2 pour taguer la CoS entre l'ONT et l'ERL et pour l'IGMP Snooping (nécéssaire pour connecter la livebox STB sur l'ERL)
 
 Il fait aussi parcher le fichier vyatta-interfaces.pl pour l'option 90.
 
