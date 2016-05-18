@@ -1,5 +1,5 @@
 # config-ERL-Orange-DHCP
-##Configuration Orange DHCP pour l'ERL3 testée et fonctionelle
+##Configuration Orange DHCP pour l'ERL3 testée et fonctionelle pour EdgeOS 1.8
 
 Avec la participation des membres de [lafibre.info](https://lafibre.info) 
 
