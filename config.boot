@@ -79,7 +79,7 @@ interfaces {
         duplex auto
         speed auto
         vif 832 {
-	    address dhcp
+            address dhcp
             description "Internet Orange DHCP"
             dhcp-options {
                 client-option "send vendor-class-identifier &quot;sagem&quot;;"
@@ -89,7 +89,7 @@ interfaces {
                 client-option "request dhcp-lease-time, dhcp-renewal-time, dhcp-rebinding-time, domain-search, rfc3118-authentication;"
                 default-route update
                 default-route-distance 210
-                name-server update			
+                name-server update
             }
             egress-qos "0:0 1:0 2:0 3:0 4:0 5:0 6:6 7:0"
             firewall {
@@ -103,17 +103,17 @@ interfaces {
         }
         vif 838 {
             address dhcp
-        description "TV - VOD"
-        dhcp-options {
-            client-option "send vendor-class-identifier &quot;sagem&quot;;"
-            client-option "send user-class &quot;\047FSVDSL_livebox.MLTV.softathome.Livebox3&quot;;"
-            client-option "request subnet-mask, routers, rfc3442-classless-static-routes;"
-            client-option "send dhcp-client-identifier xx:xx:xx:xx;"/* MAC Livebox */
+            description "TV - VOD"
+            dhcp-options {
+                client-option "send vendor-class-identifier &quot;sagem&quot;;"
+                client-option "send user-class &quot;\047FSVDSL_livebox.MLTV.softathome.Livebox3&quot;;"
+                client-option "request subnet-mask, routers, rfc3442-classless-static-routes;"
+                client-option "send dhcp-client-identifier xx:xx:xx:xx;"/* MAC Livebox */
             }
             egress-qos "0:4 1:4 2:4 3:4 4:4 5:4 6:4 7:4"
         }
         vif 840 {
-         address 192.168.255.254/24
+            address 192.168.255.254/24
             description "VLAN TV Canal 1 - Zap"
             egress-qos "0:5 1:5 2:5 3:5 4:5 5:5 6:5 7:5"
         }
@@ -126,10 +126,8 @@ interfaces {
             address 192.168.2.254/24
             description "Voip"
         }
-		}
+    }
     loopback lo
-    
-
 }
 
 protocols {
@@ -153,10 +151,10 @@ protocols {
 }
 service {
     dhcp-server {
-         disabled false
+        disabled false
         hostfile-update disable
-		global-parameters "option rfc3118-authentication code 90 = string;"
-		global-parameters "option SIP code 120 = string;"
+        global-parameters "option rfc3118-authentication code 90 = string;"
+        global-parameters "option SIP code 120 = string;"
         shared-network-name LOCAL_NETWORK {
             authoritative enable
             subnet 192.168.1.0/24 {
@@ -173,21 +171,20 @@ service {
             subnet 192.168.2.0/24 {
                 default-router 192.168.2.254
                 dns-server 80.10.246.136
-	        dns-server 81.253.149.6
+                dns-server 81.253.149.6
                 lease 86400
                 start 192.168.2.21 {
                     stop 192.168.2.200
                 }
-              	subnet-parameters "option rfc3118-authentication 00:00:00:00:00:00:00:00:00:00:00:64:68:63:70:6c:69:76:65:62:6f:78:66:72:32:35:30;"
-		subnet-parameters "option SIP 0:6:73:62:63:74:33:67:3:50:55:54:6:61:63:63:65:73:73:11:6f:72:61:6e:67:65:2d:6d:75:6c:74:69:6d:65:64:69:61:3:6e:65:74:0;"
+                subnet-parameters "option rfc3118-authentication 00:00:00:00:00:00:00:00:00:00:00:64:68:63:70:6c:69:76:65:62:6f:78:66:72:32:35:30;"
+                subnet-parameters "option SIP 0:6:73:62:63:74:33:67:3:50:55:54:6:61:63:63:65:73:73:11:6f:72:61:6e:67:65:2d:6d:75:6c:74:69:6d:65:64:69:61:3:6e:65:74:0;"
                 static-mapping Livebox {
                     ip-address 192.168.2.1
                     mac-address xx:xx:xx:xx;"/* MAC Livebox */
-
+                }
             }
         }
     }
-}
     dns {
         forwarding {
             cache-size 1000
@@ -286,6 +283,7 @@ system {
         export disable
     }
 }
+
 /* Warning: Do not remove the following line. */
 /* === vyatta-config-version: "config-management@1:conntrack@1:cron@1:dhcp-relay@1:dhcp-server@4:firewall@5:ipsec@4:nat@3:qos@1:quagga@2:system@4:ubnt-pptp@1:ubnt-util@1:vrrp@1:webgui@1:webproxy@1:zone-policy@1" === */
 /* Release version: v1.7.0.4783374.150622.1534 */
