@@ -91,7 +91,7 @@ interfaces {
                 default-route-distance 210
                 name-server update			
             }
-            egress-qos "0:0 1:1 2:2 3:3 4:4 5:5 6:6 7:7"
+            egress-qos "0:0 1:0 2:0 3:0 4:0 5:0 6:6 7:0"
             firewall {
                 in {
                     name WAN_IN
